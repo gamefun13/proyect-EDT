@@ -1,0 +1,11 @@
+              precision    recall  f1-score   support
+
+   Bare_soil       0.74      0.76      0.75       614
+       Cloud       0.98      1.00      0.99       614
+Cloud_shadow       0.93      0.98      0.96       614
+ Ocean_water       0.74      0.67      0.70       614
+  Vegetation       1.00      0.99      1.00       614
+
+    accuracy                           0.88      3070
+   macro avg       0.88      0.88      0.88      3070
+weighted avg       0.88      0.88      0.88      3070
