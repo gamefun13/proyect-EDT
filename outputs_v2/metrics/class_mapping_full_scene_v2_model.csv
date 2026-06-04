@@ -1,0 +1,7 @@
+raster_code,model_label,class_name
+1,0,Bare_soil
+2,1,Cloud
+3,2,Cloud_shadow
+4,3,Dark_ocean_water
+5,4,Ocean_water
+6,5,Vegetation

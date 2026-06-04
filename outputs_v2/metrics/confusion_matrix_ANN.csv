@@ -1,0 +1,7 @@
+,Predicted_Bare_soil,Predicted_Cloud,Predicted_Cloud_shadow,Predicted_Dark_ocean_water,Predicted_Ocean_water,Predicted_Vegetation
+Actual_Bare_soil,979,0,0,1,0,0
+Actual_Cloud,0,979,0,0,1,0
+Actual_Cloud_shadow,0,0,972,8,0,0
+Actual_Dark_ocean_water,1,0,45,922,12,0
+Actual_Ocean_water,0,7,0,19,954,0
+Actual_Vegetation,0,0,0,0,0,980

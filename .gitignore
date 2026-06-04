@@ -6,3 +6,6 @@ venv/
 
 data/bands_10m/
 data/bands_20m/
+
+data/cropped/bands_10m/
+data/cropped/bands_20m/

@@ -1,0 +1,8 @@
+{
+"type": "FeatureCollection",
+"name": "roi_hunga_tonga",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:EPSG::32701" } },
+"features": [
+{ "type": "Feature", "properties": { "fid": 1, "name": "roi_hunga_tonga" }, "geometry": { "type": "Polygon", "coordinates": [ [ [ 647232.368147781235166, 7737025.298579441383481 ], [ 646699.626712989993393, 7713762.255926893092692 ], [ 690147.650394848547876, 7713466.288463120348752 ], [ 689437.328481793636456, 7737794.813985250890255 ], [ 647232.368147781235166, 7737025.298579441383481 ] ] ] } }
+]
+}
