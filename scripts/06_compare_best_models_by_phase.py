@@ -118,7 +118,7 @@ accuracy_data = {
         "Improved phase - 6 classes",
         "Improved phase - 6 classes",
         "Improved phase - 6 classes",
-        "Improved phase - 6 classes"
+        "Improved phase - 6 classes"   
     ]
 }
 
@@ -149,3 +149,80 @@ plt.savefig(OUTPUT_ACCURACY_COMPARISON, dpi=300)
 plt.show()
 
 print(f"Accuracy comparison figure saved at: {OUTPUT_ACCURACY_COMPARISON}")
+
+
+# ============================================================
+# 5. COMPARACIÓN DE ÁREAS CLASIFICADAS ENTRE LOS 2 MEJORES MODELOS
+# ============================================================
+
+OUTPUT_AREA_COMPARISON = os.path.join(
+    FIGURES_DIR,
+    "classified_area_comparison_best_models.png"
+)
+
+area_comparison_data = {
+    "Class": [
+        "Bare_soil", "Cloud", "Cloud_shadow", "Dark_ocean_water", "Ocean_water", "Vegetation",
+        "Bare_soil", "Cloud", "Cloud_shadow", "Dark_ocean_water", "Ocean_water", "Vegetation"
+    ],
+    "Area_km2": [
+        # Best model - Initial phase (KNN, 5 classes, full scene)
+        82.7967,
+        195.1958,
+        414.2218,
+        0.0,          # No existía esta clase en la fase inicial
+        11363.1591,
+        0.6661,
+
+        # Best model - Improved phase (KNN, 6 classes, full scene)
+        202.8397,
+        706.9777,
+        476.4831,
+        4965.8943,
+        5702.9761,
+        0.8686
+    ],
+    "Model / Phase": [
+        "KNN - Initial phase",
+        "KNN - Initial phase",
+        "KNN - Initial phase",
+        "KNN - Initial phase",
+        "KNN - Initial phase",
+        "KNN - Initial phase",
+
+        "KNN - Improved phase",
+        "KNN - Improved phase",
+        "KNN - Improved phase",
+        "KNN - Improved phase",
+        "KNN - Improved phase",
+        "KNN - Improved phase"
+    ]
+}
+
+area_comparison_df = pd.DataFrame(area_comparison_data)
+
+plt.figure(figsize=(12, 6))
+
+ax = sns.barplot(
+    data=area_comparison_df,
+    x="Class",
+    y="Area_km2",
+    hue="Model / Phase",
+    palette=["blue", "green"]
+)
+
+plt.title("Comparison of Classified Areas Between the Best Models")
+plt.xlabel("Class")
+plt.ylabel("Area (km²)")
+plt.xticks(rotation=30, ha="right")
+
+for container in ax.containers:
+    ax.bar_label(container, fmt="%.2f", fontsize=8, padding=2)
+
+plt.legend(title="Model / Phase")
+plt.tight_layout()
+
+plt.savefig(OUTPUT_AREA_COMPARISON, dpi=300)
+plt.show()
+
+print(f"Classified area comparison figure saved at: {OUTPUT_AREA_COMPARISON}")
